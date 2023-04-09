@@ -1,38 +1,392 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --Dark-Gray: hsl(0, 0%, 55%);
+  --Very-Dark-Gray: hsl(0, 0%, 41%);
+  --text-Alata: "Alata";
+  --text-josefin: "Josefin Sans";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Alata", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+  color: var(--Dark-Gray);
+}
+
+.container {
+  padding: 2rem 1.5rem;
+}
+
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 660px;
   display: flex;
   flex-direction: column;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 800px) {
+  .header nav .nav-menu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    padding: 2.5rem 2rem;
+    text-transform: uppercase;
+  }
+  .header nav .nav-menu .nav-logo {
+    margin-bottom: 90px;
+  }
+  .header nav .nav-menu ul li {
+    font-size: 25px;
+    line-height: 55px;
+  }
+}
+.header nav .nav-menu.open {
+  display: block;
+  transition: 0.4s ease-in;
+}
+.header .icons {
+  padding: 10px;
+  transition: 0.4s;
+  z-index: 100;
+  cursor: pointer;
+}
+.header .icons .bar {
+  background-color: #fff;
+  width: 30px;
+  height: 3px;
+  margin-top: 7px;
+}
+.header .rotate .bar-1 {
+  transform: rotate(40deg);
+}
+.header .rotate .bar-2 {
+  opacity: 0;
+}
+.header .rotate .bar-3 {
+  transform: rotate(-40deg);
+  margin-top: -13px;
+}
+.header .header-text {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
+}
+.header .header-text h1 {
+  color: var(--White);
+  padding: 20px;
+  border: 3px solid white;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  font-weight: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.interaction {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+.interaction .interact-text {
+  padding: 0rem 1rem;
+}
+.interaction h2 {
+  font-size: 2rem;
+  margin: 3rem 0rem 1rem 0rem;
+  font-weight: 200;
+}
+.interaction p {
+  line-height: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.creation {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.creation h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  font-weight: 100;
+}
+.creation .creation-images {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+.creation .creation-images article {
+  position: relative;
+}
+.creation .creation-images article h3 {
+  color: var(--White);
+  font-weight: 100;
+  position: absolute;
+  bottom: 20px;
+  padding: 0px 10px;
+  width: 40%;
+}
+.creation .button button {
+  text-transform: uppercase;
+  border: 1px solid black;
+  font-size: 1rem;
+  font-family: var(--text-Alata);
+  font-weight: 500;
+  background: none;
+  margin-top: 40px;
+  padding: 0.5rem 2rem;
+  letter-spacing: 0.3rem;
+}
+.creation .button button:hover {
+  color: var(--White);
+  background-color: var(--Black);
+  cursor: pointer;
+}
+
+.creationDeskop {
+  display: none;
+}
+
+.footer {
+  background-color: var(--Black);
+  color: var(--White);
+  text-align: center;
+  padding: 3rem 0;
+}
+.footer .logo {
+  margin-bottom: 20px;
+}
+.footer .footer-menu {
+  margin-bottom: 30px;
+}
+.footer .footer-menu ul li {
+  margin-bottom: 20px;
+}
+.footer .socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+.footer .socials img {
+  cursor: pointer;
+}
+.footer small {
+  font-size: 0.9rem;
+  color: var(--Dark-Gray);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 3.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .header .header-text {
+    max-width: 60%;
+  }
+  .header .header-text h1 {
+    font-size: 3rem;
   }
 }
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 3rem 6rem;
+  }
+  .nav-logo,
+  .icons {
+    display: none;
+  }
+  .header .nav-menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    color: var(--White);
+    cursor: pointer;
+  }
+  .header .nav-menu ul li {
+    position: relative;
+  }
+  .header .nav-menu ul li::after {
+    position: absolute;
+    content: "";
+    display: flex;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+  }
+  .header .nav-menu ul li:hover::after {
+    width: 60px;
+  }
+  .header .header-text {
+    justify-content: flex-start;
+    max-width: 60%;
+  }
+  .header .header-text h1 {
+    font-size: 3rem;
+  }
+  .interaction {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    margin-bottom: 4rem;
+  }
+  .interaction .interact-text {
+    position: absolute;
+    background-color: white;
+    width: 45%;
+    max-width: 900px;
+    right: 160px;
+    bottom: 4px;
+    padding: 1rem 2rem;
+    text-align: initial;
+  }
+  .interaction .interact-text h2 {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  .creation {
+    display: none;
+  }
+  .creationDeskop {
+    display: block;
+    text-align: center;
+  }
+  .creationDeskop .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    padding-right: 30px;
+  }
+  .creationDeskop .title h2 {
+    font-size: 40px;
+    font-weight: 500;
+  }
+  .creationDeskop .title .button button {
+    text-transform: uppercase;
+    border: 1px solid black;
+    font-size: 1rem;
+    font-family: var(--text-Alata);
+    font-weight: 500;
+    background: none;
+    padding: 0.5rem 2rem;
+    letter-spacing: 0.3rem;
+  }
+  .creationDeskop .title .button button:hover {
+    color: var(--White);
+    background-color: var(--Black);
+    cursor: pointer;
+  }
+  .creationDeskop .creation-images {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    align-self: start;
+  }
+  .creationDeskop .creation-images article {
+    position: relative;
+  }
+  .creationDeskop .creation-images article h3 {
+    color: var(--White);
+    font-weight: 100;
+    position: absolute;
+    bottom: 20px;
+    padding: 0px 40px;
+    text-align: initial;
+    width: 75%;
+    font-size: 30px;
+  }
+  .creationDeskop .creation-images article:hover {
+    opacity: 0.4;
+    cursor: pointer;
+  }
+  .footer {
+    text-align: initial;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 8rem;
+  }
+  .footer .footer-menu ul {
+    display: flex;
+    gap: 3rem;
+  }
+  .footer .footer-menu ul li {
+    position: relative;
+    cursor: pointer;
+  }
+  .footer .footer-menu ul li::after {
+    position: absolute;
+    content: "";
+    display: flex;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: 0.3s;
+  }
+  .footer .footer-menu ul li:hover::after {
+    width: 60px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .header .header-text {
+    max-width: 50%;
+  }
+  .header .header-text h1 {
+    font-size: 4rem;
+  }
+  .interaction .interact-text {
+    right: 220px;
+    bottom: 50px;
+    padding: 1rem 5rem;
+  }
+  .interaction .interact-text h2 {
+    font-size: 3rem;
+    margin: 3rem 0rem 2rem 0rem;
+  }
+}/*# sourceMappingURL=App.css.map */

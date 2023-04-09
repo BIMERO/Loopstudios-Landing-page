@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-Gray: hsl(0, 0%, 55%);
+    --Very-Dark-Gray: hsl(0, 0%, 41%);
+    --text-Alata: "Alata";
+    --text-josefin: "Josefin Sans";
+}
+
+body {
+    font-family: "Alata", sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-family: "Alata", sans-serif;
+    font-size: 15px;
+    color: var(--Dark-Gray);
+}
+
+.container {
+    padding: 2rem 1.5rem;
+}
+
+// ====================HEADER============================//
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 660px;
+    display: flex;
+    flex-direction: column;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 800px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 0px;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                min-height: 100vh;
+                background-color: black;
+                color: white;
+                padding: 2.5rem 2rem;
+                text-transform: uppercase;
+
+                .nav-logo {
+                    margin-bottom: 90px;
+                }
+
+                ul {
+                    li {
+                        font-size: 25px;
+                        line-height: 55px;
+                    }
+                }
+            }
+        }
+        .nav-menu.open {
+            display: block;
+            transition: 0.4s ease-in;
+        }
+    }
+
+    .icons {
+        padding: 10px;
+        transition: 0.4s;
+        z-index: 100;
+        cursor: pointer;
+
+        .bar {
+            background-color: #fff;
+            width: 30px;
+            height: 3px;
+            margin-top: 7px;
+        }
+    }
+    .rotate {
+        .bar-1 {
+            transform: rotate(40deg);
+        }
+        .bar-2 {
+            opacity: 0;
+        }
+        .bar-3 {
+            transform: rotate(-40deg);
+            margin-top: -13px;
+        }
+    }
+
+    .header-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+
+    .header-text h1 {
+        color: var(--White);
+        padding: 20px;
+        border: 3px solid white;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        font-weight: 100;
+    }
+}
+
+// ====================INTERACTIVE============================//
+.interaction {
+    padding: 6rem 2rem;
+    text-align: center;
+
+    .interact-text {
+        padding: 0rem 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+        margin: 3rem 0rem 1rem 0rem;
+        font-weight: 200;
+    }
+    p {
+        line-height: 1.5;
+    }
+}
+
+// ====================CREATIONS============================//
+.creation {
+    text-align: center;
+    margin-bottom: 5rem;
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 4rem;
+        font-weight: 100;
+    }
+
+    .creation-images {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+
+        article {
+            position: relative;
+
+            h3 {
+                color: var(--White);
+                font-weight: 100;
+                position: absolute;
+                bottom: 20px;
+                padding: 0px 10px;
+                width: 40%;
+            }
+        }
+    }
+
+    .button {
+        button {
+            text-transform: uppercase;
+            border: 1px solid black;
+            font-size: 1rem;
+            font-family: var(--text-Alata);
+            font-weight: 500;
+            background: none;
+            margin-top: 40px;
+            padding: 0.5rem 2rem;
+            letter-spacing: 0.3rem;
+
+            &:hover {
+                color: var(--White);
+                background-color: var(--Black);
+                cursor: pointer;
+            }
+        }
+    }
+}
+.creationDeskop {
+    display: none;
+}
+
+// ====================FOOTER============================//
+.footer {
+    background-color: var(--Black);
+    color: var(--White);
+    text-align: center;
+    padding: 3rem 0;
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-menu {
+        margin-bottom: 30px;
+        ul {
+            li {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 20px;
+        img {
+            cursor: pointer;
+        }
+    }
+    small {
+        font-size: 0.9rem;
+        color: var(--Dark-Gray);
+    }
+}
+
+// ====================DESKTOP============================//
+@media screen and (min-width: 768px) {
+    .header {
+        padding: 3.5rem;
+        .header-text {
+            max-width: 60%;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 3rem 6rem;
+    }
+    // ====================HEADER-DESKTOP============================//
+
+    .nav-logo,
+    .icons {
+        display: none;
+    }
+    .header {
+        .nav-menu {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 3rem;
+                color: var(--White);
+                cursor: pointer;
+
+                li {
+                    position: relative;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        display: flex;
+                        bottom: -5px;
+                        width: 0;
+                        height: 2px;
+                        background-color: white;
+                        transition: 0.3s;
+                    }
+                }
+
+                li:hover::after {
+                    width: 60px;
+                }
+            }
+        }
+
+        .header-text {
+            justify-content: flex-start;
+            max-width: 60%;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    // ====================INTERACTIVE-DESKTOP============================//
+
+    .interaction {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+        margin-bottom: 4rem;
+
+        .interact-text {
+            position: absolute;
+            background-color: white;
+            width: 45%;
+            max-width: 900px;
+            right: 160px;
+            bottom: 4px;
+            padding: 1rem 2rem;
+            text-align: initial;
+
+            h2 {
+                font-size: 2rem;
+                margin: 1rem;
+            }
+        }
+    }
+
+    // ====================CREATIONSDESKTOP============================//
+
+    .creation {
+        display: none;
+    }
+    .creationDeskop {
+        display: block;
+        text-align: center;
+    }
+    .creationDeskop {
+        .title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 70px;
+            padding-right: 30px;
+
+            h2 {
+                font-size: 40px;
+                font-weight: 500;
+            }
+            .button {
+                button {
+                    text-transform: uppercase;
+                    border: 1px solid black;
+                    font-size: 1rem;
+                    font-family: var(--text-Alata);
+                    font-weight: 500;
+                    background: none;
+                    padding: 0.5rem 2rem;
+                    letter-spacing: 0.3rem;
+
+                    &:hover {
+                        color: var(--White);
+                        background-color: var(--Black);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .creation-images {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            align-self: start;
+
+            article {
+                position: relative;
+
+                h3 {
+                    color: var(--White);
+                    font-weight: 100;
+                    position: absolute;
+                    bottom: 20px;
+                    padding: 0px 40px;
+                    text-align: initial;
+                    width: 75%;
+                    font-size: 30px;
+                }
+                &:hover {
+                    opacity: 0.4;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // ====================FOOTER-DESKTOP============================//
+
+    .footer {
+        text-align: initial;
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 8rem;
+
+        .footer-menu {
+            ul {
+                display: flex;
+                gap: 3rem;
+
+                li {
+                    position: relative;
+                    cursor: pointer;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        display: flex;
+                        bottom: -5px;
+                        width: 0;
+                        height: 2px;
+                        background-color: white;
+                        transition: 0.3s;
+                    }
+                }
+
+                li:hover::after {
+                    width: 60px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .header {
+        .header-text {
+            max-width: 50%;
+
+            h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+    .interaction {
+        .interact-text {
+            right: 220px;
+            bottom: 50px;
+            padding: 1rem 5rem;
+
+            h2 {
+                font-size: 3rem;
+                margin: 3rem 0rem 2rem 0rem;
+            }
+        }
+    }
+}
